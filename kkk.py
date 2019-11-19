@@ -15,18 +15,19 @@ def circle_func(x_c, y_c, R, N):
     return x,y
 
 N = 100
-R = 1
-x = np.linspace(-5, 5, N)
-y = x**2 + x 
+R = 3
+
+x_m = np.linspace(-5, 5, N)
+y_m = x_m**2 + x_m 
 
 anim_list = []
 for i in range (0, N, 1):
-
-    x, y = circle_func(x_c, y_c, R, N)
-    circle, = plt.plot(x, y, 'g-', lw=2)
-    parabol, = plt.plot(x[:i+1], y[:i+1], 'r-', lw=2)
-    point, = plt.plot(x[i], y[i], 'bo')
-    anim_list.append([circle,parabol,point])
+    x_cir,y_cir = circle_func(x_m[i], y_m[i], R, N)
+    liniaq, = plt.plot(x_m, y_m, 'g-', lw=2)
+    circle, = plt.plot(x_cir, y_cir, 'y-', lw=2)
+    parabol, = plt.plot(x_m[:i], y_m[:i], 'r-', lw=2)
+    point, = plt.plot(x_m[i], y_m[i], 'bo')
+    anim_list.append([liniaq,circle,parabol,point])
     
 plt.axes().set_aspect('equal')
 
