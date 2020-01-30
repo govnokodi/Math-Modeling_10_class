@@ -88,4 +88,4 @@ for i in range (0, len(t), 1):
     
 ani = ArtistAnimation(fig, bodys, interval=50)
 plt.axis('equal')
-ani.save('Anime1.gif')
+ani.save('gifff.gif')
